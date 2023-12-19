@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Almoxarifado</title>
+    <link rel="stylesheet" href="./assets/css/requisicao.css" />
+    <link rel="stylesheet" href="./assets/css/inputRequisicao.css" />
+  </head>
+  <body>
+    <div class="menu"></div>
+
+    <div class="main">
+      <div class="header">
+        <span>Novo Pedido de Requisição</span>
+      </div>
+      <div class="conteudo">
+        <div class="dadosPrincipais">
+          <div class="titulo">
+            <span>Dados Principais | Requisição Nº </span>
+            <input
+              type="text"
+              id="inpNumero"
+              data-obrigatorio="true"
+              data-only-number="true"
+            />
+          </div>
+          <div class="camposPrincipais">
+            <div class="camposPrincipaisLinha1 linhasCampos">
+              <div class="grupo1 grupoInput">
+                <span>ID.</span>
+                <input
+                  type="text"
+                  id="idDepartamento"
+                  data-obrigatorio="true"
+                  data-only-number="true"
+                />
+              </div>
+              <div class="grupo2 grupoInput">
+                <span>Departamento</span>
+                <input type="text" id="departamento" data-obrigatorio="true" />
+              </div>
+              <div class="grupo3 grupoInput">
+                <span>Data</span>
+                <input
+                  type="date"
+                  id="dataRequisicao"
+                  data-obrigatorio="true"
+                />
+              </div>
+            </div>
+            <div class="camposPrincipaisLinha2 linhasCampos">
+              <div class="grupo4 grupoInput">
+                <span>ID Func.</span>
+                <input
+                  type="text"
+                  id="idFuncionario"
+                  data-obrigatorio="true"
+                  data-only-number="true"
+                />
+              </div>
+              <div class="grupo5 grupoInput">
+                <span>Nome Funcionário</span>
+                <input
+                  type="text"
+                  id="NomeFuncionario"
+                  data-obrigatorio="true"
+                />
+              </div>
+              <div class="grupo6 grupoInput">
+                <span>Cargo</span>
+                <input type="text" id="cargo" data-obrigatorio="true" />
+              </div>
+            </div>
+            <div class="camposPrincipaisLinha3 linhasCampos">
+              <div class="grupo7 grupoInput">
+                <span>Categoria Motivo</span>
+                <div class="grupoCategoria">
+                  <select id="categoriaMotivo" data-obrigatorio="true"></select>
+                  <img class="btnAdd" src="./assets/img/add.svg" alt="" />
+                </div>
+              </div>
+              <div class="grupo8 grupoInput">
+                <span>Motivo</span>
+                <div class="grupoMotivo">
+                  <select id="Motivo" data-obrigatorio="true"></select>
+                  <img class="btnAdd" src="./assets/img/add.svg" alt="" />
+                </div>
+              </div>
+              <div class="grupo9 grupoInput">
+                <span>Nível de Prioridade</span>
+                <div class="radioPrioridade" id="radioPrioridade">
+                  <div class="grupoPrioridade">
+                    <input
+                      class="chkPrioridade"
+                      type="radio"
+                      name="prioridade"
+                      id="urgente"
+                      data-obrigatorio="true"
+                    />
+                    <span>Urgente</span>
+                  </div>
+                  <div class="grupoPrioridade">
+                    <input
+                      class="chkPrioridade"
+                      type="radio"
+                      name="prioridade"
+                      id="medio"
+                      data-obrigatorio="true"
+                    />
+                    <span>Médio</span>
+                  </div>
+                  <div class="grupoPrioridade">
+                    <input
+                      class="chkPrioridade"
+                      type="radio"
+                      name="prioridade"
+                      id="baixo"
+                      data-obrigatorio="true"
+                    />
+                    <span>Baixo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="itensRequisicao">
+            <div class="box-maior">            
+          <div class="titulo">
+            <span>Dados Principais | Requisição Nº </span>
+          </div>
+          <div class="camposItens">
+            <div class="linhaAdicionarItens">
+              <div class="grupoProduto">
+                <span>Cod. Produto</span>
+                <input type="text" id="CodigoProduto" data-only-number="true" />
+              </div>
+              <div class="grupoProdutoDescricao">
+                <span>Descrição</span>
+                <input type="text" id="DescricaoProduto" />
+              </div>
+              <div class="grupoEstoque">
+                <span>Quantidade</span>
+                <input type="text" id="Estoque" data-only-number="true" />
+              </div>
+              <div class="grupoStatusEstoque">
+                <div>
+                  <img src="./assets/img/verde.svg" alt="" />
+                </div>
+              </div>
+              <div class="grupoStatusEstoque">
+                <div>
+                  <div id="corEstoque"></div>
+                  <div class="modalEstoque">
+                    <div class="modalDiv">
+                      <span class="quadrado modal-verde"></span>
+                      <p id="statusEstoque">Estoque acima de 10% do Estoque mínimo</p>
+                    </div>
+                    <div class="modalDiv">
+                      <span class="quadrado modal-amarelo"></span>
+                      <p id="statusEstoqueMinimo">Estoque abaixo de 10% do Estoque mínimo</p>
+                    </div>
+                    <div class="modalDiv">
+                      <span class="quadrado modal-vermelho"></span>
+                      <p id="statusEstoqueMaximo">Estoque abaixo do Estoque mínimo</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grupoBtnInserirItens">
+                <div
+                  class="BtnInserirItens" id="btnAdicionarItens"  onclick="criarBtnRemover()">
+                  <span>Adicionar</span>
+                </div>
+              </div>
+            </div>
+            <div class="tabela">
+              <table class="tabelaItens" id="tabelaItens">
+                <tr>
+                  <th style="max-width: 10px">Código</th>
+                  <th>Produto</th>
+                  <th style="max-width: 40px; width: 40px">Qtd</th>
+                  <th style="max-width: 40px; width: 40px">Und</th>
+                  <th style="max-width: 80px; width: 80px">Preço</th>
+                  <th style="max-width: 100px; width: 100px">Total</th>
+                  <th style="max-width: 100px; width: 100px">#</th>
+                </tr>
+              </table>
+            </div>
+            <div class="totalContainer">
+              <span>Total:</span>
+              <p class="valorTotal" id="valorTotal">Valor Final</p>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="grupoBtnInserirItens">
+            <div class="BtnInserirItens" id="btnVerificar">
+              <span>Verificar</span>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <script src="./assets/scripts/dados.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+  </body>
+</html>
