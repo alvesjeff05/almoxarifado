@@ -30,10 +30,11 @@
               <div class="grupo1 grupoInput">
                 <span>ID.</span>
                 <input
-                  type="text"
+                  type="number"
                   id="idDepartamento"
                   data-obrigatorio="true"
                   data-only-number="true"
+                  data-mask="00"
                 />
               </div>
               <div class="grupo2 grupoInput">
@@ -142,7 +143,7 @@
               </div>
               <div class="grupoEstoque">
                 <span>Quantidade</span>
-                <input type="text" id="Estoque" data-only-number="true" />
+                <input type="text" id="Estoque" data-only-number="true" disabled min="1" step="1" />
               </div>
               <div class="grupoStatusEstoque">
                 <div>
@@ -203,6 +204,8 @@
       </div>
     </div>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/scripts/dados.js"></script>
     <script src="./assets/scripts/main.js"></script>
   </body>

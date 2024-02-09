@@ -20,7 +20,7 @@ function adicionarCorAoFocarInput(){
     // }
     listInput.forEach(function(campo){
         campo.addEventListener('focus', function(){
-            campo.style.backgroundColor="aqua";
+            campo.style.backgroundColor="green";
         });
 
         campo.addEventListener('blur', function(){
@@ -87,6 +87,7 @@ document.getElementById('CodigoProduto').addEventListener("keyup", function(){
 
     if(produtosFiltrados.length>0){
         document.getElementById('DescricaoProduto').value = produtosFiltrados[0].Descricao;
+        document.getElementById('Estoque').removeAttribute('disabled');
     }else{
         document.getElementById('DescricaoProduto').value = "";
     }
